@@ -2,17 +2,18 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { Data } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
-  symbol: string;
+  tasks: string;
+  salary: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 1, name: 'Maria Julia', tasks: "fazer o mundo melhor", salary: 15.211},
+  {position: 2, name: 'Luiz', tasks: "fazer alguma coisa que preste", salary: 10.111},
   // ... rest of your data
 ];
 
@@ -22,7 +23,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'tasks', 'salary'];
   dataSource = ELEMENT_DATA;
 }
 
